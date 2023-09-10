@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Test</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="index.js" defer></script>
+</head>
+
+<body>
+    <div class="mainSquare"></div>
+    <div>
+        <label for="containerSize">Container Size:</label>
+        <input type="number" id="containerSize" value="200">
+    </div>
+    <div>
+        <label for="childSize">Child Size:</label>
+        <input type="number" id="childSize" value="50">
+    </div>
+    <div>
+        <label for="numberOfChildren">Number of Children:</label>
+        <input type="number" id="numberOfChildren" value="16">
+    </div>
+    <button onclick="runDrawContainer()">Click me for something awesome</button>
+
+    <script>
+        function runDrawContainer() {
+            const containerSize = parseInt(document.getElementById('containerSize').value);
+            const childSize = parseInt(document.getElementById('childSize').value);
+            const numberOfChildren = parseInt(document.getElementById('numberOfChildren').value);
+
+            const container = document.querySelector('.mainSquare');
+            container.innerHTML = '';
+
+            drawContainer(containerSize, childSize, numberOfChildren);
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            runDrawContainer();
+        });
+    </script>
+
+</body>
+
+</html>
